@@ -1,12 +1,19 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "emitDecoratorMetadata": true,
+        "declaration": true,
+        "stripInternal": true,
         "experimentalDecorators": true,
-        "strict": true,
-        "module": "commonjs",
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "module": "es2015",
         "moduleResolution": "node",
+        "paths": {
+            "@angular/core": ["node_modules/@angular/core"],
+            "@ngrx/store": ["node_modules/@ngrx/store"]
+        },
         "rootDir": ".",
+        "outDir": "dist",
         "sourceMap": true,
         "inlineSources": true,
         "target": "es5",
@@ -14,12 +21,12 @@
         "lib": [
             "es2015",
             "dom"
-        ],
-        "typeRoots": [
-            "./node_modules/@types/"
         ]
     },
-    "exclude": [
-        "node_modules"
-    ]
+    "files": [
+        "src/index.ts"
+    ],
+    "angularCompilerOptions": {
+        "strictMetadataEmit": true
+    }
 }
